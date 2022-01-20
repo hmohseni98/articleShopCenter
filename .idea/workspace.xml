@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fde37e5-bb37-4b87-9e06-9ca7fb4cd3c8" name="Changes" comment="" />
+    <list default="true" id="6fde37e5-bb37-4b87-9e06-9ca7fb4cd3c8" name="Changes" comment="fixup! complete writer menu">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_1_20_2022_8_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_1_20_2022_8_30_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_20_2022_4_29_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_20_2022_4_29_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArticleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArticleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArticleShopCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArticleShopCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CategoryRepository.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="writer_menu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +68,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArticleShopCenter" />
         <item itemvalue="Application.ArticleShopCenter" />
         <item itemvalue="Application.ArticleShopCenter" />
         <item itemvalue="Application.ArticleShopCenter" />
@@ -111,6 +120,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create main class and bug fixes" />

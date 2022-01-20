@@ -44,12 +44,22 @@ public class ArticleList {
     public void showList() {
         for (int i = 0; i < emptyHomeIndex; i++) {
             if (list[i] != null){
-                System.out.print(list[i]);
-                System.out.print(", ");
+                System.out.print("ID:");
+                System.out.print(list[i].getId());
+                System.out.print("  ");
+                System.out.print("Title:");
+                System.out.print(list[i].getTitle());
+                System.out.print("  ");
+                System.out.print("Price:");
+                System.out.print(list[i].getPrice());
+                System.out.print("  ");
+                System.out.print("Approved:");
+                System.out.print(list[i].getApproved());
+                System.out.println();
             }
             else {
-                System.out.print("null");
-                System.out.print(", ");
+                System.out.println("article does not exist!");
+                break;
             }
         }
     }

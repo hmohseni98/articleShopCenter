@@ -5,6 +5,9 @@ import java.util.List;
 public class ArticleRepository {
     private Connection connection = MyConnection.connection;
 
+    public ArticleRepository() {
+    }
+
     public Integer insert(Article article) throws SQLException {
         String insert = "insert into Article (title, price,category_id,user_id,approved) values (?,?,?,?,?);";
         PreparedStatement preparedStatement = null;

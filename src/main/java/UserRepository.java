@@ -3,6 +3,9 @@ import java.sql.*;
 public class UserRepository {
     private Connection connection = MyConnection.connection;
 
+    public UserRepository() {
+    }
+
     public Integer insert(User user) throws SQLException {
         String insert = "insert into \"user\" (role, name, username, password) values (?,?,?,?);";
         PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
@@ -30,5 +33,24 @@ public class UserRepository {
             return resultSet.getString("role");
         }
         return null;
+    }
+    public User findByUserPass(String userName , String password) throws SQLException {
+        User user = null;
+        String find = "SELECT * FROM \"user\" " +
+                "WHERE username = ? AND password = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(find);
+        preparedStatement.setString(1,userName);
+        preparedStatement.setString(2,password);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()){
+            user = new User(
+                    resultSet.getInt("id"),
+                    resultSet.getString("name"),
+                    resultSet.getString("password"),
+                    resultSet.getString("username"),
+                    Role.valueOf(resultSet.getString("role"))
+            );
+        }
+        return user;
     }
 }

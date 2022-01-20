@@ -5,6 +5,9 @@ import java.util.List;
 public class ShoppingCardRepository {
     private Connection connection = MyConnection.connection;
 
+    public ShoppingCardRepository() {
+    }
+
     public Integer insert(ShoppingCard shoppingCard) throws SQLException {
         String insert = "insert into shopping_card (article_id, user_id,date,payed) values (?,?,?,?);";
         PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
@@ -62,7 +65,6 @@ public class ShoppingCardRepository {
         }
         preparedStatement.close();
         return shoppingCards;
-
-
     }
+
 }

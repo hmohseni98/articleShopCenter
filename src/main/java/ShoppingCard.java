@@ -18,6 +18,14 @@ public class ShoppingCard {
         this.payed = payed;
     }
 
+
+    public ShoppingCard(Date date, Article article, User user, Boolean payed) {
+        this.date = date;
+        this.article = article;
+        this.user = user;
+        this.payed = payed;
+    }
+
     @Override
     public String toString() {
         return "ShoppingCard{" +

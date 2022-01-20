@@ -18,6 +18,15 @@ public class Article {
                 '}';
     }
 
+    public Article(String title, Integer price, Category category, User user, Boolean approved) {
+        this.title = title;
+        this.price = price;
+        this.category = category;
+        this.user = user;
+        this.approved = approved;
+    }
+
+
     public Integer getId() {
         return id;
     }

@@ -1,9 +1,15 @@
 public class Category {
     private Integer id;
     private String title;
-    private Category category;
+    private Integer category_id;
 
     public Category() {
+    }
+
+    public Category(Integer id, String title, Integer category_id) {
+        this.id = id;
+        this.title = title;
+        this.category_id = category_id;
     }
 
     @Override
@@ -11,13 +17,8 @@ public class Category {
         return "Category{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", category=" + category +
+                ", category_id=" + category_id +
                 '}';
-    }
-
-    public Category(String title, Category category) {
-        this.title = title;
-        this.category = category;
     }
 
     public Category(String title) {
@@ -40,17 +41,11 @@ public class Category {
         this.title = title;
     }
 
-    public Category getCategory() {
-        return category;
+    public Integer getCategory_id() {
+        return category_id;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Category(Integer id, String title, Category category) {
-        this.id = id;
-        this.title = title;
-        this.category = category;
+    public void setCategory_id(Integer category_id) {
+        this.category_id = category_id;
     }
 }

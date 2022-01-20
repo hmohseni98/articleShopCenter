@@ -1,31 +1,27 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArticleRepository {
     private Connection connection = MyConnection.connection;
 
-    public void insert(Article article) {
+    public Integer insert(Article article) throws SQLException {
         String insert = "insert into Article (title, price,category_id,user_id,approved) values (?,?,?,?,?);";
         PreparedStatement preparedStatement = null;
-        try {
-            preparedStatement = connection.prepareStatement(insert);
-            preparedStatement.setString(1, article.getTitle());
-            preparedStatement.setInt(2, article.getPrice());
-            preparedStatement.setInt(3, article.getCatagory().getId());
-            preparedStatement.setInt(4, article.getUser().getId());
-            preparedStatement.setBoolean(5, article.getApproved());
-            preparedStatement.execute();
-            preparedStatement.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
+        preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+        preparedStatement.setString(1, article.getTitle());
+        preparedStatement.setInt(2, article.getPrice());
+        preparedStatement.setInt(3, article.getCatagory().getId());
+        preparedStatement.setInt(4, article.getUser().getId());
+        preparedStatement.setBoolean(5, article.getApproved());
+        preparedStatement.execute();
+        ResultSet generatedKey = preparedStatement.getGeneratedKeys();
+        Integer id = null;
+        if (generatedKey.next()) {
+            id = generatedKey.getInt(1);
         }
-
-
+        preparedStatement.close();
+        return id;
     }
 
     public void update(Article article) throws SQLException {

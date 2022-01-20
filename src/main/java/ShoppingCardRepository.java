@@ -1,22 +1,25 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCardRepository {
     private Connection connection = MyConnection.connection;
 
-    public void insert(ShoppingCard shoppingCard) throws SQLException {
+    public Integer insert(ShoppingCard shoppingCard) throws SQLException {
         String insert = "insert into shopping_card (article_id, user_id,date,payed) values (?,?,?,?);";
-        PreparedStatement preparedStatement = connection.prepareStatement(insert);
+        PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
         preparedStatement.setInt(1, shoppingCard.getArticle().getId());
         preparedStatement.setInt(2, shoppingCard.getUser().getId());
         preparedStatement.setDate(3, shoppingCard.getDate());
         preparedStatement.setBoolean(4, shoppingCard.getPayed());
         preparedStatement.execute();
+        ResultSet generatedKey = preparedStatement.getGeneratedKeys();
+        Integer id = null;
+        if (generatedKey.next()){
+            id = generatedKey.getInt(1);
+        }
         preparedStatement.close();
+        return id;
     }
     public void update(ShoppingCard shoppingCard) throws SQLException {
         String update = "update shopping_card set payed=? where id = ? ;";

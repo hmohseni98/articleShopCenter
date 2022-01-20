@@ -7,7 +7,7 @@ public class MyConnection {
 
     static {
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "123456");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
